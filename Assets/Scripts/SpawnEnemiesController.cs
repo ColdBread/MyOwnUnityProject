@@ -27,7 +27,7 @@ public class SpawnEnemiesController : MonoBehaviour {
             GameObject obj = GameObject.Instantiate(this.prefabEnemyShip);
             obj.transform.position = this.transform.position;
             float xSpawn = Random.Range(-5.0f, 5.0f);
-            Vector3 tmp = new Vector3(xSpawn, 0, 0);
+            Vector3 tmp = new Vector3(xSpawn, 0, -0.5f);
             obj.transform.position += tmp;
             last_spawn = Time.time;
         }
