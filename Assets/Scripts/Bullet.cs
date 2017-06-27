@@ -9,8 +9,14 @@ public class Bullet : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		
+        StartCoroutine(destroyLater(6.0f));
 	}
+
+    IEnumerator destroyLater(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Destroy(this.gameObject);
+    }
 
     void OnTriggerEnter2D(Collider2D collider)
     {

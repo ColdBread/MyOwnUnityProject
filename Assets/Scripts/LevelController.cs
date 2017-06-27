@@ -64,11 +64,23 @@ public class LevelController : MonoBehaviour {
 
     public void showEndPopUp()
     {
+        this.destroyObjects();
         LocalStats stats = this.getStats();
         GameObject parent = UICamera.first.transform.parent.gameObject;
-        GameObject ibj = NGUITools.AddChild(parent, endPopUpPrefab);
-        EndPopUp popUp = object.getComponent<EndPopUp>();
+        GameObject obj = NGUITools.AddChild(parent, endPopUpPrefab);
+        EndPopUp popUp = obj.GetComponent<EndPopUp>();
         stats.save();
         popUp.setStats(stats);
+    }
+    private void destroyObjects()
+    {
+        Destroy(HeroController.current.gameObject);
+        Destroy(SpawnEnemiesController.current.gameObject);
+        Destroy(LivesController.current.gameObject);
+    }
+
+    public void toMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

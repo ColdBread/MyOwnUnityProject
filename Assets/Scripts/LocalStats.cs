@@ -26,12 +26,13 @@ public class LocalStats {
         if (stats.localStats.Count == 0)
         {
             LocalStats newStats = new LocalStats { };
+            return newStats;
         }
         else
         {
             return stats.localStats[0];
         }
-        return newStats;
+        
     }
 	
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnEnemiesController : MonoBehaviour {
+    public static SpawnEnemiesController current;
 
     public GameObject prefabEnemyShip;
     public GameObject prefabEnemyBomb;
@@ -11,7 +12,7 @@ public class SpawnEnemiesController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
+        current = this;
 	}
 
     bool spawnTime()

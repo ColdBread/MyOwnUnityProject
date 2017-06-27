@@ -45,7 +45,8 @@ public class HeroController : MonoBehaviour {
         if (this.health == 0)
         {
             //GameOver
-            SceneManager.LoadScene("MainMenu");
+            //SceneManager.LoadScene("MainMenu");
+            LevelController.current.onExitClick();
         }
     }
 
